@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define CANT 5 // NO OCUPA MEMORIA
+
+void cargaVector(int[],int);//EL VECTOR POR REFERENCIA
+void mostrarTodo (int[],int);
+void burbujeo (int[], int);
+void buscar (int[],int);
+void mostrarPar (int[],int);
+
+int main()
+{
+  // int const T=5; // OCUPA LUGAR EN MEMORIA
+
+  int miVector[CANT];
+  int aux;
+  char seguir = 's';
+
+while(seguir=='s')
+{
+  system("cls");
+  
+  printf("Seleccione: \n 1- Cargar numeros \n 2- Ordenar de menor a mayor \n 3- Mostrar todo \n 4-Mostrar pares\n 5- SALIR\n");
+  scanf("%d",&aux);
+
+   switch(aux)
+  {
+  case 1:
+    cargaVector(miVector,CANT); //CARGAR
+    break;
+  case2:
+    burbujeo (miVector,CANT); //ORDENAR
+    break;
+  case 3:
+    mostrarTodo (miVector,CANT); //MOSTRAR TODO
+    break;
+  case 4:
+    mostrarPar (miVector[],CANT); // MOSTRAR PARES
+    break;
+  case 5:
+    seguir = 'n';
+    break;
+  default:
+    printf("Seleccionar opcion correcta <1-5>;
+  }
+}
+return 0;
+}
+
+void cargaVector(int vector[],int tam)
+{
+int i;
+for (i=0;i<tam;i++)
+{
+printf("Ingrese un numero: ");
+scanf("%d",&vector[i]);
+}
+}
+
+void mostrarTodo (int vector[],int tam)
+{
+int i;
+
+for (i=0;i<tam;i++)
+{
+    printf("%d\n",vector[i]);
+}
+}
+
+void burbujeo (int vector[], int tam)
+{
+//SWAP. INTERCAMBIAR VALOR DE LAS VARIABLES. BURBUJEO
+int i,j,aux;
+for(i=0;i<tam-1;i++)
+{
+for(j=i+1 ;j<tam ;j++) // J EMPIEZA EN I+1
+{
+if (vector[i]>vector[j])
+{
+aux = vector[i];
+vector[i] = vector[j];
+vector[j] = aux;
+}
+}
+}
+}
+
+void buscar (int vector[],int tam)
+{
+int i, aux,flag;
+printf("\nIngrese el numero a buscar: ");
+scanf("%d",&aux);
+
+for (i=0; i<tam; i++)
+{
+    if(aux==vector[i])
+    {
+        printf("El indice del numero %d es el %d\n",aux,i);
+        flag = 1;
+        break; // PARA MOSTRAR UNICAMENTE LA PRIMER INCIDENCIA
+    }
+}
+if(flag == 0)
+{
+    printf("No se encontro el numero\n");
+}
+}
+
+void mostrarPar (int vector[],int tam)
+{
+int i;
+printf("\n\n NUMEROS PAR: \n\n");
+
+for (i=0;i<tam;i++)
+{
+    if (vector[i]%2==0)
+    {
+        printf("%d\n",vector[i]);
+    }
+}
+}
