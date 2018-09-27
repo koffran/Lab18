@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1538060777 source:c:\users\alumno\desktop\0927\alumnos.c
+	<stdio.h>
+	<stdlib.h>
+	"curso.h"
+	"alumnos.h"
+
+1538060777 c:\users\alumno\desktop\0927\alumnos.h
+
+1538060777 source:c:\users\alumno\desktop\0927\curso.c
+	"curso.h"
+
+1538059705 c:\users\alumno\desktop\0927\curso.h
+
+1538060866 source:c:\users\alumno\desktop\0927\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alumnos.h"
+	"curso.h"
+
