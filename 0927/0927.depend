@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1538060777 source:c:\users\alumno\desktop\0927\alumnos.c
+1538099864 source:c:\users\koff\desktop\facu\2018\0927\alumnos.c
 	<stdio.h>
 	<stdlib.h>
 	"curso.h"
 	"alumnos.h"
 
-1538060777 c:\users\alumno\desktop\0927\alumnos.h
+1538099252 c:\users\koff\desktop\facu\2018\0927\curso.h
 
-1538060777 source:c:\users\alumno\desktop\0927\curso.c
+1538099252 c:\users\koff\desktop\facu\2018\0927\alumnos.h
+
+1538099252 source:c:\users\koff\desktop\facu\2018\0927\curso.c
 	"curso.h"
 
-1538059705 c:\users\alumno\desktop\0927\curso.h
-
-1538060866 source:c:\users\alumno\desktop\0927\main.c
+1538100398 source:c:\users\koff\desktop\facu\2018\0927\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alumnos.h"

@@ -18,7 +18,7 @@ void inicializarAlumnosConDatos (eAlumno listado [], int tam)
     char nombre [5][50] = {"Juan","Maria","Pepe","Claudia","Sebastian"};
     float promedio [5] ={8.5,5,6.5,3.5,7};
     char direccion [5][50] = {"Direccion1","Direccion2","Direccion3","Direccion4","Direccion5"};
-    int curso[5] = {1,2,1,3,2,};
+    int curso[5] = {1,2,1,3,2};
 
     int i;
     for (i=0;i<5;i++)
