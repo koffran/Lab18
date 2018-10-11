@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1539213587 source:c:\users\koff\desktop\facu\2018\primer parcial\clientes.c
+	"clientes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539223720 source:c:\users\koff\desktop\facu\2018\primer parcial\informes.c
+	"informes.h"
+
+1539222551 source:c:\users\koff\desktop\facu\2018\primer parcial\publicaciones.c
+	"publicaciones.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539224545 source:c:\users\koff\desktop\facu\2018\primer parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"clientes.h"
+	"publicaciones.h"
+	"informes.h"
+
+1539212659 c:\users\koff\desktop\facu\2018\primer parcial\clientes.h
+
+1539222367 c:\users\koff\desktop\facu\2018\primer parcial\publicaciones.h
+
+1539224545 c:\users\koff\desktop\facu\2018\primer parcial\informes.h
+	"clientes.h"
+	"publicaciones.h"
+
