@@ -25,3 +25,37 @@
 
 1539316957 c:\users\koff\desktop\facu\2018\parcial\automovil.h
 
+1539355468 source:c:\users\alumno\desktop\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"propietarios.h"
+	"Automovil.h"
+	"informes.h"
+
+1539317404 c:\users\alumno\desktop\parcial\propietarios.h
+
+1539355921 c:\users\alumno\desktop\parcial\automovil.h
+
+1539355000 source:c:\users\alumno\desktop\parcial\propietarios.c
+	"propietarios.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539355214 source:c:\users\alumno\desktop\parcial\automovil.c
+	"Automovil.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539354886 c:\users\alumno\desktop\parcial\informes.h
+	"propietarios.h"
+	"Automovil.h"
+
+1539356041 source:c:\users\alumno\desktop\parcial\informes.c
+	"informes.h"
+

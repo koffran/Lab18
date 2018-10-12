@@ -99,12 +99,76 @@ int findeAutoById(eAuto* lista, int dni,int tam);
  */
 void printeAuto(eAuto* list, int i);
 
+/** \brief Imprime por pantalla un auto retirado
+ *
+ * \param list eAuto* el array
+ * \param i int El indice del auto deseado
+ * \return void
+ *
+ */
 void printeAutoRetirado(eAuto* list, int i);
+
+/** \brief Imprime todos los autos de un array
+ *
+ * \param list eAuto* el array a imprimir
+ * \param length int el tamaño del array
+ * \return void
+ *
+ */
 void printeAutosRetirados(eAuto* list, int length);
 
-int retirarAuto(eAuto* publicaciones,int indice);
+/** \brief Retira un auto del estacionamiento pasando su estado a NO ESTACIONADO
+ *
+ * \param  eAuto* el array
+ * \param indice int el indice del auto a retirar
+ * \return int Retorna  0 si hay algun error
+ *                      1 Si se retira correctamente
+ */
+int retirarAuto(eAuto* ,int indice);
 
+/** \brief Recibe un numero y muestra la marca correcta en texto
+ *
+ * \param marca int La marca, en numero
+ * \return void
+ *
+ */
 void imprimirMarca(int marca);
-//float calcularEstadia(eAuto* lista,int indice);
 
+/** \brief Calcula el valor de la estadia
+ *
+ * \param lista eAuto* El array donde  buscar
+ * \param indice int El indice para el que se quiere calcular
+ * \return float El monto final
+ *
+ */
+float calcularEstadia(eAuto* lista,int indice);
+
+/** \brief Hardcodea datos para autos estaionados
+ *
+ * \param la lista a hardcodear
+ * \return
+ *
+ */
+void hardcodeoAutos (eAuto autos[]);
+
+/** \brief La recaudacion de todos los autos retirados
+ *
+ * \param lista_No_Estacionados eAuto* la lista de autos retirados
+ * \param tam int el tamaño del array
+ * \return float El valor de la recaudacion total
+ *
+ */
+float recaudacionTotal(eAuto* lista_No_Estacionados,int tam);
+
+/** \brief La recaudacion por marca
+ *
+ * \param lista_No_Estacionados eAuto* Lista de autos retirados
+ * \param tam int El tamaño del array
+ * \param marca int La marca a calcular
+ * \return float La recaudacion final para la marca seleccionada
+ *
+ */
+float recaudacionPorMarca(eAuto* lista_No_Estacionados,int tam,int marca);
+int menuMarcas();
+int sorteAutos(eAuto* lista, int tam, int order);
 #endif // FUNCIONES_H_INCLUDED

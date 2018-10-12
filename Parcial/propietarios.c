@@ -126,7 +126,7 @@ void removeeCliente (eCliente* lista, int len,int id)
                 if ( rta == 's')
                 {
                     lista[indice].isEmpty = 0;
-                    printf("\Cliente eliminado\n\n");
+                    printf("\ Cliente eliminado\n\n");
                 }
             }
     }
@@ -136,14 +136,14 @@ void printeCliente(eCliente* list, int i)
 {
   if (list[i].isEmpty == 1)
   {
-    printf("%s\t\t%10s\t\t%16s\t%d\n",list[i].lastName,list[i].name,list[i].tarjeta,list[i].id_propietario);
+    printf("%s\t\t%10s\t%16s\t%d\n",list[i].lastName,list[i].name,list[i].tarjeta,list[i].id_propietario);
   }
 }
 
 void printeClientes(eCliente* list, int length)
 {
     int i;
-    printf("Apellido\t\tNombre\t\tNumero de tarjeta\tID\n");
+    printf("Apellido\t\tNombre\tNumero de tarjeta\tID\n");
     for (i=0; i<length; i++)
     {
         printeCliente(list,i);
@@ -274,8 +274,6 @@ void modificar (eCliente* lista, int tam, int id)
             }
     }
 }
-
-
 
 void hardcodeo (eCliente personas[])
 {

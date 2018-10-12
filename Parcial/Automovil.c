@@ -62,6 +62,12 @@ void altaAutos (eAuto* lista, int i)
     printf("ingrese la patente: \n");
     fflush(stdin);
     gets(patente);
+    while(strlen(patente)!= 6)
+    {
+        printf("ERROR!! Ingrese la patente de 6 caracteres: \n");
+        fflush(stdin);
+        gets(patente);
+    }
 
     id = i+1;
 
@@ -111,7 +117,7 @@ int retirarAuto (eAuto* lista,int indice)
     int retorno =0;
     float estadia;
 
-    printf("\n\nDesea Retirar este auto? <S/N>\n");
+   // printf("\n\nDesea Retirar este auto? <S/N>\n");
     rta = getch();
     rta = tolower(rta);
     fflush(stdin);
@@ -120,8 +126,8 @@ int retirarAuto (eAuto* lista,int indice)
         lista[indice].isEmpty = NO_ESTACIONADO;
         retorno = 1;
 
-     //   estadia = calcularEstadia(lista,indice);
-     //   printf("VALOR DE LA ESTADIA : %.2f\n",estadia);
+        estadia = calcularEstadia(lista,indice);
+        printf("VALOR DE LA ESTADIA : %.2f\n",estadia);
     }
 
     return retorno;
@@ -129,7 +135,7 @@ int retirarAuto (eAuto* lista,int indice)
 
 void imprimirMarca(int marca)
 {
-    char retorno[12];
+
     switch(marca)
     {
     case 1:
@@ -147,12 +153,12 @@ void imprimirMarca(int marca)
     }
 }
 
-/*float calcularEstadia(eAuto* lista,int indice)
+float calcularEstadia(eAuto* lista,int indice)
 {
     float retorno;
     int horas, aux;
 
-    horas = calcularHoras();
+    horas = 10;
     aux =lista[indice].marca;
     switch(aux)
     {
@@ -169,9 +175,9 @@ void imprimirMarca(int marca)
         retorno = horas * 250;
         break;
     }
-    printf("Debe %d Horas",horas);
+    //printf("Horas totales de estacionamiento: %d",horas);
     return retorno;
-}*/
+}
 
 void printeAuto(eAuto* list, int i)
 {
@@ -204,6 +210,112 @@ void printeAutoRetirado(eAuto* list, int i)
 {
     if (list[i].isEmpty == NO_ESTACIONADO)
     {
-       printf("%d\t\t%d\t\t%16s\t%s\n",list[i].id,list[i].id_cliente,list[i].patente);
+       printf("%d\t\t%d\t\t%16s\t\n",list[i].id,list[i].id_cliente,list[i].patente);
     }
+}
+
+void hardcodeoAutos (eAuto autos[])
+{
+   strcpy(autos[0].patente,"car001");
+   autos[0].isEmpty = 1;
+   autos[0].id_cliente = 1;
+   autos[0].id =1;
+   autos[0].marca = 1;
+
+   strcpy(autos[1].patente,"car002");
+   autos[1].isEmpty = 1;
+   autos[1].id_cliente = 2;
+   autos[1].id =2;
+   autos[1].marca = 2;
+
+   strcpy(autos[2].patente,"car003");
+   autos[2].isEmpty = 1;
+   autos[2].id_cliente = 3;
+   autos[2].id =3;
+   autos[2].marca = 4;
+
+   strcpy(autos[3].patente,"car004");
+   autos[3].isEmpty = 1;
+   autos[3].id_cliente = 4;
+   autos[3].id =4;
+   autos[3].marca = 3;
+
+}
+
+float recaudacionTotal(eAuto* lista_No_Estacionados,int tam)
+{
+    int i;
+    float acumulador=0,auxFloat =0;
+    for(i=0;i<tam;i++)
+    {
+        if(lista_No_Estacionados[i].isEmpty== NO_ESTACIONADO)
+        {
+            auxFloat = calcularEstadia(lista_No_Estacionados,i);
+            acumulador += auxFloat;
+        }
+    }
+    return acumulador;
+}
+
+float recaudacionPorMarca(eAuto* lista_No_Estacionados,int tam,int marca)
+{
+    int i;
+    float acumulador=0,auxFloat =0;
+    for(i=0;i<tam;i++)
+    {
+        if(lista_No_Estacionados[i].isEmpty== NO_ESTACIONADO && lista_No_Estacionados[i].marca == marca )
+        {
+            auxFloat = calcularEstadia(lista_No_Estacionados,i);
+            acumulador += auxFloat;
+        }
+    }
+    return acumulador;
+}
+
+int menuMarcas()
+{
+    int opcion;
+   printf("De que marca desea la recaudacion total?\n\n1- ALPHA ROMEO\n2- FERRARI\n3- AUDI\n4- OTRO\n5- Salir");
+    scanf("%d",&opcion);
+    return opcion;
+}
+
+int sorteAutos(eAuto* lista, int tam, int order)
+{
+    int i,j,retorno =-1;
+    eAuto aux;
+
+    for (i=0; i<tam-1; i++)
+    {
+        if(lista[i].isEmpty ==1)
+        {
+            for (j=i+1; j<tam; j++)
+            {
+                if(lista[j].isEmpty ==1 && order == 1)
+                {
+                    if(strcmp(lista[i].patente, lista[j].patente)>0)
+                    {
+                        aux = lista[i];
+                        lista[i] = lista[j];
+                        lista[j] = aux;
+                    }
+                }
+                else
+                {
+                    if(lista[j].isEmpty ==1 && order == 0)
+                {
+                    if(strcmp(lista[i].patente, lista[j].patente)<0)
+                    {
+                        aux = lista[i];
+                        lista[i] = lista[j];
+                        lista[j] = aux;
+                    }
+                }
+                }
+
+            }
+            retorno =0;
+        }
+    }
+    return retorno;
 }
