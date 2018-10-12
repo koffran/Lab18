@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1539316478 source:c:\users\koff\desktop\facu\2018\parcial\automovil.c
+	"Automovil.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539315588 source:c:\users\koff\desktop\facu\2018\parcial\propietarios.c
+	"propietarios.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+
+1539310939 c:\users\koff\desktop\facu\2018\parcial\propietarios.h
+
+1539316580 source:c:\users\koff\desktop\facu\2018\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"propietarios.h"
+	"Automovil.h"
+
+1539316957 c:\users\koff\desktop\facu\2018\parcial\automovil.h
+
