@@ -7,31 +7,36 @@ typedef struct
     char caracter;
 }eDato;
 
-eDato* cargarDatos();
-//eDato* cargarArray(eDato*,int);
+eDato* constructor();
 void mostrarDato(eDato* );
 
 int main()
 {
-    eDato* pDato;
+    eDato* d;
 
-    pDato = cargarDatos();
-    mostrarDato(pDato);
+    d = cargarDatos();
+    if (d == NULL)
+    {
+        printf("No hay espacio");
+    }
+    else
+    {
+      mostrarDato(d);
+    }
+
 
     return 0;
 }
 
-/*funcion retorna puntero a estructura.
-Adentro lo creamos y cargams con datos.*/
-
-eDato* cargarDatos()
+eDato* constructor()//NO MUESTRO MENSAJES DENTRO DEL CONSTRUCTOR. USO EL RETURN
 {
-    eDato dato;
     eDato* pDato;
-    pDato = &dato;
-
-    pDato->entero = 2;
-    pDato->caracter = 'A';
+    pDato = (eDato*)malloc(sizeof(eDato));
+    if(pDato != NULL)
+    {
+        pDato->entero = 2;
+        pDato->caracter = 'A';
+    }
 
     return pDato;
 }
@@ -41,20 +46,4 @@ void mostrarDato(eDato* pDato)
     printf("%d--%c",pDato->entero,pDato->caracter);
 }
 
-/*eDato* cargarArray(eDato* array,int tam)
-{
-    int i;
-    for(i=0;i<tam;i++)
-    {
-        cargarDatos((array+i),tam);
-    }
-}
 
-eDato* mostrarArray(eDato* array,int tam)
-{
-    int i;
-    for(i=0;i<tam;i++)
-    {
-       mostrarDato((array+i),tam);
-    }
-}*/
