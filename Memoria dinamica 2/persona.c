@@ -53,10 +53,18 @@ int ePersona_getId(ePersona* persona)
 
 char* ePersona_getName(ePersona* persona)
 {
-   /* int length;
-    length = strlen(persona->name);*/
-    char nombre;
-    strcpy(nombre,"FRAN");
+    char name[30];
+    strcpy(name,persona->name);
 
-    return nombre;
+    return name;
+}
+
+void ePersona_setEdad(ePersona* persona, int edad)
+{
+    persona->edad = edad;
+}
+
+void ePersona_setName(ePersona* persona, char* nombre)
+{
+    strcpy(persona->name,nombre);
 }
