@@ -6,17 +6,15 @@ typedef struct
 {
     int id;
     char name[20];
-    char surName[20];
+    char last_name[20];
 }ePerson;
-
-ePerson* nuevaPersona();
 
 int main()
 {
-    ePerson* persona;
-    persona = nuevaPersona();
-
-    int a;
+    ePerson* people = (ePerson*)malloc(sizeof(ePerson*)*11);
+    int aux[11],
+    i = 0;
+    char ac[20];
     char b[20];
     char c[20];
     int r;
@@ -30,36 +28,30 @@ int main()
     {
         do
         {
-            r = fscanf(pArchivo,"%d,%[^,],%[^,]\n",&a,b,c);
-            if(r==3)
-            {
-            printf(" %d %s %s \n",a,b,c);
-            }
+            r = fscanf(pArchivo,"%[^,],%[^,],%[^\n]\n",ac,b,c);
+            printf(" %s %s %s \n",ac,b,c);
 
+            strcpy((people+i)->name,b);
+            strcpy((people+i)->last_name,c);
+            aux[i] = atoi(ac);
+            (people+i)->id = aux[i];
+            i++;
         }while(!feof(pArchivo));
 
-    //    fread(&persona,sizeof(char),1,pArchivo);
 
+        printf("\nARRAY: \n\n");
+        for (i=0;i<11;i++)
+        {
+            printf("%d  %s  %s\n",(people+i)->id ,(people+i)->name,(people+i)->last_name);
+        }
         fclose(pArchivo);
-
-       // printf("El int es : %d\nEl float es : %s\nEl char es : %s\n",persona->id,persona->name,persona->surName);
     }
+
 
     return 0;
 }
 
-ePerson* nuevaPersona()
-{
-    ePerson* persona;
-    persona = (ePerson*)malloc(sizeof(ePerson));
-    if (persona!= NULL)
-    {
-        persona->id = 0;
-        strcpy(persona->name," ");
-        strcpy(persona->surName," ");
-    }
-    return persona;
-}
+
 /*void destructor (eEmployee* empleado) //delete
 {
     free(empleado);
